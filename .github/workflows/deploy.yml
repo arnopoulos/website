@@ -1,12 +1,40 @@
+# name: gh-pages deploy
+
+# on:
+#   push:
+#     branches: master
+
+# jobs:
+#   deploy:
+#     name: deploy to gh-pages
+#     runs-on: [ubuntu-latest]
+#     steps:
+#       - run: npm run deploy
+
+
 name: gh-pages deploy
 
-on:
-  push:
+on: 
+  push: 
     branches: master
 
 jobs:
   deploy:
-    name: deploy to gh-pages
-    runs-on: [ubuntu-latest]
+
+    runs-on: ubuntu-latest
+
+    # strategy:
+    #   matrix:
+    #     node-version: [8.x, 10.x, 12.x]
+
     steps:
-      - run: npm run deploy
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm deploy
+      run: |
+        npm run deploy
+      env:
+        CI: true
