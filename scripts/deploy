@@ -3,6 +3,6 @@
 echo "this is the begining of the log"
 pwd
 echo "this is the end, close your eyes and take it in"
-exit 100
+# exit 100
 npm run build
 gh-pages -d build
