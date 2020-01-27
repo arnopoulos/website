@@ -1,7 +1,6 @@
 #!/bin/bash
 
 pwd
-cwd
 exit 1
 npm run build
 gh-pages -d build
