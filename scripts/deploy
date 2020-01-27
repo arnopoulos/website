@@ -1,6 +1,8 @@
 #!/bin/bash
 
+echo "this is the begining of the log"
 pwd
-exit 1
+echo "this is the end, close your eyes and take it in"
+exit 100
 npm run build
 gh-pages -d build
