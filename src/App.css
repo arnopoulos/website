@@ -4,18 +4,35 @@
   width: 300px;
 }
 
-.Subtitle {
-  padding-left: 40px;
-  max-width: 500px;
-}
-
 .App-header {
   background-color: #E7EFF4;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: #6A7D96;
+}
+
+@media (max-width: 1000px) {
+  .App-header {
+    flex-direction: column;
+  }
+
+  .Subtitle {
+    max-width: 300px;
+    padding-top: 20px;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1000px) {
+  .App-header {
+    flex-direction: row;
+  }
+
+  .Subtitle {
+    max-width: 500px;
+    padding-left: 40px;
+  }
 }
